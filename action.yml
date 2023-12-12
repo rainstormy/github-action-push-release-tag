@@ -1,0 +1,28 @@
+name: Push release tag
+description: Creates and pushes a release tag in Git for the latest commit on the default branch.
+author: Steffen Diswal
+
+inputs:
+  release-version:
+    description: The semantic version number of the new release on the form `major.minor.patch[-prerelease][+buildinfo]` without any `v` prefix.
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Validate input parameters # See https://github.com/actions/runner/issues/1070.
+      run: |
+        if [[ -z "$RELEASE_VERSION" ]]; then
+          echo "Input parameter 'release-version' must be non-empty."
+          exit 2
+        fi
+      env:
+        RELEASE_VERSION: ${{ inputs.release-version }}
+      shell: bash
+    - name: Push a release tag
+      run: |
+        git tag --annotate --message "Release $RELEASE_VERSION" "v$RELEASE_VERSION"
+        git push origin "v$RELEASE_VERSION"
+      env:
+        RELEASE_VERSION: ${{ inputs.release-version }}
+      shell: bash
