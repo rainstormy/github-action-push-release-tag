@@ -1,5 +1,5 @@
-name: Push release tag
-description: Creates and pushes a release tag in Git for the latest commit on the default branch.
+name: Release / Create tag
+description: Creates and pushes a Git tag for the release commit on the default branch.
 author: Steffen Diswal
 
 inputs:

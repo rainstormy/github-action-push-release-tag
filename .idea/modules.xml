@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/github-action-push-release-tag.iml" filepath="$PROJECT_DIR$/.idea/github-action-push-release-tag.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/github-action-release-tag.iml" filepath="$PROJECT_DIR$/.idea/github-action-release-tag.iml" />
     </modules>
   </component>
 </project>

@@ -1,3 +1,3 @@
-= Push Release Tag &ndash; Reusable GitHub Action
+= Create Tag &ndash; Release Automation
 :experimental:
 :source-highlighter: highlight.js
